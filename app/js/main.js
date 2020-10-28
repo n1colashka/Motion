@@ -1,0 +1,21 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    function initMenu() {
+        const menuBtn = document.querySelector('.header__btn');
+        const menuWrapper = document.querySelector('.profile-menu');
+
+        document.body.addEventListener('click', event => {
+            if (event.target.closest('.profile-menu') || event.target.closest('.header__btn')) {
+                menuWrapper.classList.toggle('active');
+                menuBtn.classList.toggle('active');
+            } else {
+                menuWrapper.classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+    }
+
+
+    initMenu();
+    
+});

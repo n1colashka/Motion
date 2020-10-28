@@ -1,0 +1,67 @@
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        &__logo {
+            flex-basis: auto;
+        }
+
+        &__links {
+            flex-basis: auto;
+            a {
+                display: none;
+
+                &.active {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .profile-menu {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 25px;
+        top: 70px;
+
+        &::before {
+            display: none;
+        }
+
+        &__item {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 25px;
+        }
+
+        &__icon {
+            width: 15px;
+            margin-right: 10px;
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+
+}
+
