@@ -44,10 +44,13 @@
             }
             
             &.active {
+                color: #000000;
+            }
+
+            &:first-child {
                 &::before {
                     content: none;
                 }
-                color: #000000;
                 margin-left: 0;
                 padding-left: 0;
             }

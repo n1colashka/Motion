@@ -1,0 +1,75 @@
+.service-page {
+    margin-top: 88px;
+    padding-top: 55px;
+    padding-bottom: 75px;
+
+    &__video {
+        margin-bottom: 30px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 22px;
+
+        p {
+            max-width: 520px;
+        }
+    }
+
+    &__name {
+        max-width: 650px;
+        @include font('ms-bold');
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 10px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__time {
+        @include font('ms-semibold');
+        font-size: 20px;
+        line-height: 32px;
+        right: 25px;
+        left: auto;
+        top: 0;
+        padding-left: 25px;
+        background-image: url('../images/clock-icon-black.svg');
+    }
+
+    &__info-wrapper {
+        max-width: 280px;
+        width: 100%;
+    }
+
+    &__info {
+        position: relative;
+        max-width: 580px;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+
+        .trains__info-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .trains__info-name {
+            font-size: 20px;
+            line-height: 32px;
+            flex-basis: auto;
+            margin-right: 0;
+        }
+
+        .trains__info-img {
+            margin: 0;
+            flex-basis: auto;
+        }
+    }
+}
