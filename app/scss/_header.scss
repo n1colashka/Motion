@@ -21,13 +21,10 @@
             color: rgba(#000, 0.3);
             padding-left: 35px;
             margin-left: 50px;
+            transition: .3s ease;
 
-            &:first-child {
-                margin-left: 0;
-                padding-left: 0;
-                &::before {
-                    display: none;
-                }
+            &:hover {
+                color: #000000;
             }
 
             &::before {
@@ -42,13 +39,21 @@
             }
             
             &.active {
+                &::before {
+                    content: none;
+                }
                 color: #000000;
+                margin-left: 0;
+                padding-left: 0;
             }
         }
     }
 
     &__logo {
         flex-basis: 33.333%;
+        a {
+            display: inline-block;
+        }
     }
 
     &__btn {

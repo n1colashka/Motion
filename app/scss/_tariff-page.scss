@@ -1,0 +1,39 @@
+.tariff-page {
+    padding-top: 44px;
+    padding-bottom: 94px;
+
+    &__title {
+        @include font('ms-bold');
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 15px;
+    }
+
+    &__text {
+        flex-basis: 50%;
+    }
+
+    &__subtitle {
+        @include font('ms-bold');
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    
+    &__video {
+        flex-basis: 50%;
+        margin-left: 70px;
+    }
+
+    &__btn {
+        display: none;
+    }
+}

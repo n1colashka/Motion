@@ -1,0 +1,52 @@
+.footer {
+    position: relative;
+    padding-bottom: 60px;
+    padding-top: 40px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #E5E5E5;
+    }
+
+    &__inner {
+        @include font('ms-medium');
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__links {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 25px;
+
+        a {
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+    }
+
+    &__copy {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.33);
+        margin-bottom: 5px;
+    }
+
+    &__policy {
+        max-width: 1105px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+}

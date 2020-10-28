@@ -12,6 +12,8 @@ html {
 
 body {
     @include font('ms-medium');
+    font-size: 14px;
+    line-height: 22px;
     overflow-x: hidden;
 }
 
@@ -41,10 +43,10 @@ h6 {
     margin: 0;
 }
 .container {
-    max-width: 1530px;
+    max-width: 1550px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 25px;
     box-sizing: border-box;
 }
 
@@ -58,4 +60,3 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
