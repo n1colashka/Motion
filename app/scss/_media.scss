@@ -28,6 +28,13 @@
         }
     }
 
+    .page-inner {
+        .trains__item {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
     .service-page {
         &__info-wrapper {
             max-width: 50%;
@@ -67,6 +74,33 @@
 
     .container {
         padding: 0 15px;       
+    }
+
+    .page-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-wrapper {
+        padding-top: 35px;
+    }
+
+    .filter {
+        margin-bottom: 50px;
+        display: none;
+
+        &__mobile-btn {
+            display: flex;
+            margin-bottom: 45px;
+        }
+
+        &__title {
+            display: none;
+        }
+
+        &__mobile-title {
+            display: inline-block;
+        }
     }
 
     .service-page {

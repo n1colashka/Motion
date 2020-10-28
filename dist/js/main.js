@@ -21,13 +21,57 @@ document.addEventListener('DOMContentLoaded', function () {
   function changePageType() {
     var types = document.querySelectorAll('.header__links a');
     var activeType = document.querySelector('.header__links .active');
-    activeType.addEventListener('click', function () {
-      types.forEach(function (type) {
-        type.style.display = "inline-block";
-      });
+    document.body.addEventListener('click', function (event) {
+      if (event.target === activeType) {
+        event.preventDefault();
+      }
+
+      if (!event.target.closest('.header__links a')) {
+        types.forEach(function (type) {
+          type.style.display = "none";
+        });
+      } else {
+        types.forEach(function (type) {
+          type.style.display = "inline-block";
+        });
+      }
+
+      activeType.style.display = "inline-block";
     });
   }
 
+  function initFilter() {
+    var filter = document.querySelector('.filter');
+
+    if (filter) {
+      filter.addEventListener('click', function (event) {
+        if (event.target.classList.contains('filter__item-title')) {
+          event.target.parentElement.classList.toggle('active');
+        }
+      });
+      initMobileFilter();
+    }
+  }
+
+  function initMobileFilter() {
+    var filterBtn = document.querySelector('.filter__mobile-btn');
+    var filterTitle = document.querySelector('.filter__mobile-title');
+    var filter = document.querySelector('.filter');
+    filterBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      filter.classList.add('active');
+      filterBtn.style.display = 'none';
+    });
+    filterTitle.addEventListener('click', function (event) {
+      filter.classList.remove('active');
+      filterBtn.style.display = 'flex';
+    });
+  }
+
+  if (window.innerWidth <= 768) {
+    changePageType();
+  }
+
   initMenu();
-  changePageType();
+  initFilter();
 });

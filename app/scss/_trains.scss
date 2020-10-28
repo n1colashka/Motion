@@ -9,6 +9,11 @@
 
     &__item {
         margin-bottom: 80px;
+        &:hover {
+            .trains__info-add {
+                opacity: 1;
+            }
+        }
     }
 
     &__img {
@@ -133,8 +138,13 @@
     }
 
     &__info-add {
+        opacity: 0;
         @include font('ms-semibold');
         font-size: 22px;
         line-height: 35px;
+        transition: .3s ease;
+        &:hover {
+            opacity: 1;
+        }
     }
 }
