@@ -29,6 +29,9 @@
         a {
             margin-left: 35px;
             margin-right: 35px;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -47,6 +50,10 @@
         justify-content: space-between;
         font-size: 20px;
         line-height: 24px;
+
+        a:hover {
+            text-decoration: underline;
+        }
     }
 
 }
