@@ -7,6 +7,40 @@
         flex-wrap: wrap;
     }
 
+    &__series {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 20px;
+        left: 28px;
+        @include font('ms-semibold');
+        font-size: 13px;
+        line-height: 21px;
+        color: #ffffff;
+    }
+
+    &__series-icon {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        margin-right: 8px;
+        background-color: #ffffff;
+        border-radius: 50%;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 5px;
+            left: calc(50% + 1px);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-style: solid;
+            border-width: 2.5px 0 2.5px 4px;
+            border-color: transparent transparent transparent #001002;
+        }
+    }
+
     &__item {
         margin-bottom: 80px;
         &:hover {
