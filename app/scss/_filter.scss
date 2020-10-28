@@ -52,7 +52,7 @@
         &::after {
             position: absolute;
             content: "";
-            right: 0;
+            right: 5px;
             top: calc(50% + 3px);
             width: 2px;
             height: 9px;
@@ -63,7 +63,7 @@
 
         &::after {
             transform: translateY(-50%) rotate(135deg);
-            right: -5px;
+            right: 0;
         }
     }
 
