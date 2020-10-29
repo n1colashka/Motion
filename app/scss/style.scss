@@ -8,13 +8,15 @@
 
 // Sections
 @import "first-screen";
-@import "tariff-page";
 @import "trains";
+@import "tariff-page";
 @import "service-page";
-@import "filter";
-@import "tariffs";
+
 
 // Pages
+@import "filter";
+@import "tariffs";
+@import "form-page";
 
 // Footer
 @import "footer";

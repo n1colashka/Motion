@@ -90,6 +90,106 @@
 
 @media (max-width: 768px) {
 
+    .form-page {
+        &__inner {
+            padding: 45px 55px;
+            padding-top: 17px;
+        }
+        &__title {
+            @include font('ms');
+            text-align: center;
+            font-size: 25px;
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+
+        &__item {
+            margin-bottom: 15px;
+
+            span {
+                @include font('ms');
+                font-size: 15px;
+                line-height: 18px;
+                margin-bottom: 6px;
+            }
+
+            select,
+            input {
+                padding: 9px 15px;
+                font-size: 13px;
+                line-height: 16px;
+            }
+        }
+
+        &__btn {
+            margin-top: 25px;
+        }
+
+        &__item-btn {
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        &__subtitle {
+            @include font('ms');
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 25px;
+        }
+
+        &__foot {
+            text-align: center;
+        }
+
+        &__links {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__link {
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        .checkbox-block {
+            font-size: 10px;
+            line-height: 12px;
+
+            .form-page__checkbox {
+                margin-bottom: 8px;
+            }
+        }
+
+        &__link--big {
+            font-size: 15px;
+            line-height: 18px;
+            &::after {
+                content: none;
+            }
+        }
+
+        &__btn-wrapper {
+            text-align: center;
+
+            .form-page__btn {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .register-page {
+        &__title {
+            text-transform: capitalize;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+        
+        &__line {
+            margin-bottom: 25px;
+        }
+    }
+
     .tariffs {
         &__title {
             font-size: 25px;
@@ -543,6 +643,18 @@
             right: 0;
         }
     }
+
+    .form-page {
+        &__inner {
+            padding: 25px 35px;
+            padding-top: 15px;
+        }
+
+        &__item-btn {
+            right: 10px;
+        }
+
+    }
 }
 
 @media (max-width: 400px) {
@@ -563,6 +675,12 @@
 
         &__card-btn {
             bottom: 30px;
+        }
+    }
+
+    .form-page {
+        &__inner {
+            padding: 15px;
         }
     }
 }

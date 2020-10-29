@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motion - Core</title>
+    <title>Motion - тарифы</title>
     <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -83,54 +84,56 @@
         </div>
     </header>
 
-    <section class="service-page">
+    <section class="register-page form-page">
         <div class="container">
-            <div class="service-page__video">
-                <div class="plyr__video-embed" id="player">
-                    <iframe
-                        src="https://www.youtube.com/embed/qTKlIoGVZDw?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                        width="100%"
-                        allowfullscreen
-                        allowtransparency>
-                    </iframe>
-                </div>
-            </div>
-                <div class="service-page__inner">
-                    <div class="service-page__text">
-                        <div class="service-page__name">Core</div>
-                        <p>
-                            Тренировка CORE направлена на работу с мышцами пресса и спины.Поможет вам добится рельефа и укрепит поясницу.
-                        </p>
+            <div class="form-page__inner">
+                <h1 class="register-page__title form-page__title">Зарегистрироваться</h1>
+                <form action="#">
+                    <div class="form-page__item">
+                        <label>
+                            <span>E-mail</span>
+                            <input type="email" placeholder="Введите e-mail">
+                        </label>
                     </div>
-                    <div class="trains__info service-page__info">
-                        <div class="service-page__info-wrapper">
-                            <div class="trains__info-item">
-                                <div class="trains__info-name">Сложность:</div>
-                                <div class="trains__info-img">
-                                    <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="5" y="19" width="2.47826" height="5.56522" transform="rotate(-90 5 19)" fill="black"/>
-                                        <rect x="4" y="14.8699" width="2.47826" height="7.65217" transform="rotate(-90 4 14.8699)" fill="black"/>
-                                        <rect x="3" y="10.7391" width="2.47826" height="9.73913" transform="rotate(-90 3 10.7391)" fill="black"/>
-                                        <rect x="1" y="6.60889" width="2.47826" height="13.2174" transform="rotate(-90 1 6.60889)" fill="#BFBFBF" fill-opacity="0.4"/>
-                                        <rect y="2.47827" width="2.47826" height="16" transform="rotate(-90 0 2.47827)" fill="#BFBFBF" fill-opacity="0.4"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="trains__info-item">
-                                <div class="trains__info-name">Интенсивность:</div>
-                                <div class="trains__info-img">
-                                    <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect y="10.4348" width="2.47826" height="5.56522" fill="black"/>
-                                        <rect x="4.13037" y="8.34778" width="2.47826" height="7.65217" fill="black"/>
-                                        <rect x="8.26074" y="6.26086" width="2.47826" height="9.73913" fill="black"/>
-                                        <rect x="12.3911" y="2.78259" width="2.47826" height="13.2174" fill="black"/>
-                                        <rect x="16.522" width="2.47826" height="16" fill="#BFBFBF" fill-opacity="0.4"/>
-                                    </svg>
-                                </div>
-                            </div>
+                    <div class="form-page__item">
+                        <label>
+                            <span>Ваше имя</span>
+                            <input type="text" placeholder="Введите имя">
+                        </label>
+                    </div>
+                    <div class="form-page__item">
+                        <label>
+                            <span>Пароль</span>
+                            <input type="password" placeholder="Введите пароль">
+                        </label>
+                    </div>
+                    <div class="form-page__item">
+                        <label>
+                            <span>Повторите пароль</span>
+                            <input type="password" placeholder="Введите пароль">
+                        </label>
+                    </div>
+                    <div class="form-page__item checkbox-block">
+                        <label>
+                            <input type="checkbox" name="policy"> 
+                            <span class="form-page__checkbox"></span>
+                            Согласен с условиями пользовательского соглашения
+                        </label>
+                    </div>
+                    <div class="form-page__btn-wrapper">
+                        <button class="form-page__btn btn">Зарегистрироваться</button>
+                    </div>
+                    <div class="form-page__foot">
+                        <div class="form-page__line register-page__line">
+                            <span class="form-page__mark">Уже зарегистрирован?</span>
+                            <a class="form-page__link form-page__link--big" href="#">Войти</a>
                         </div>
-                    <div class="trains__time service-page__time">40м&nbsp;17с</div>
-                </div>
+                        <div class="form-page__links">
+                            <a class="form-page__link" href="#">Политика конфедициальности</a>
+                            <a class="form-page__link" href="#">Пользовательское соглашение</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -155,10 +158,8 @@
     </footer>
     
     <script src="js/libs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        const player = new Plyr('#player');
-    </script>
     
 </body>
 </html>

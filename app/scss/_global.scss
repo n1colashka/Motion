@@ -8,6 +8,7 @@
 
 html {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -57,10 +58,12 @@ h6 {
     color: #ffffff;
     font-size: 15px;
     line-height: 18px;
+    border: none;
     padding: 5px 10px;
     max-width: 215px;
     width: 100%;
     background-color: $grey;
+    cursor: pointer;
     transition: .3s ease;
 
     &:hover {
