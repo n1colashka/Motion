@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 320: {
                     slidesPerView: 'auto',
-                    spaceBetween: 30,
+                    spaceBetween: 15,
                     centeredSlides: true,
                 },
                 768: {
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 320: {
                     slidesPerView: 'auto',
-                    spaceBetween: 30,
+                    spaceBetween: 15,
                     centeredSlides: true,
                 },
                 768: {

@@ -25,6 +25,10 @@
 .filter {
     min-width: 230px;
 
+    &__btn {
+        margin-bottom: 30px;
+    }
+
     &.active {
         display: block;
     }
