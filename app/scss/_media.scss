@@ -141,12 +141,12 @@
         }
     }
 
+    .tariffs-slider__wrapper:first-child {
+        display: none;
+    }
+
     .tariffs-slider {
         margin-bottom: 40px;
-
-        &:last-child {
-            display: none;
-        }
         
         &__banner {
             font-size: 12px;
