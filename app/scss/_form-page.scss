@@ -188,6 +188,10 @@
             margin-bottom: 20px;
         }
     }
+
+    &__socials {
+        margin-top: 20px;
+    }
 }
 
 .register-page {
@@ -197,5 +201,65 @@
 
     &__line {
         margin-bottom: 35px;
+    }
+}
+
+.login-page {
+    &__title {
+        font-size: 25px;
+        line-height: 41px;
+        text-align: center;
+    }
+
+    &__btn {
+        padding: 15px 20px;
+        max-width: 100%;
+        min-width: 145px;
+        width: auto;
+    }
+
+    .checkbox-block {
+        font-size: 15px;
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 15px;
+        color: $grey;
+        border: 1px solid $grey;
+        transition: .3s ease;
+
+        span {
+            display: inline-block;
+            margin-left: 12px;
+            transition: .3s ease;
+        }
+
+        svg path {
+            transition: .3s ease;
+        }
+
+        &:hover {
+            border-color: #346EB8;
+            span {
+                color: #346EB8;
+            }
+
+            svg path {
+                fill: #346EB8; 
+            }
+        }
+
     }
 }

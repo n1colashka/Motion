@@ -90,6 +90,16 @@
 
 @media (max-width: 768px) {
 
+    .socials {
+        &__block {
+            width: 100%;
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     .form-page {
         &__inner {
             padding: 45px 55px;
@@ -179,7 +189,7 @@
 
     .register-page {
         &__title {
-            text-transform: capitalize;
+            text-transform: none;
             font-size: 20px;
             line-height: 24px;
             margin-bottom: 20px;
@@ -187,6 +197,21 @@
         
         &__line {
             margin-bottom: 25px;
+        }
+    }
+
+    .login-page {
+        &__title {
+            @include font('ms');
+            text-transform: none;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 25px;
+        }
+
+        &__btn {
+            min-width: 155px;
+            margin-top: 5px;
         }
     }
 
@@ -589,6 +614,13 @@
 }
 
 @media (max-width: 480px) {
+
+    .login-page {
+        &__title {
+            font-size: 15px;
+            line-height: 18px;
+        }
+    }
 
     .tariffs-slider {
 

@@ -83,10 +83,10 @@
         </div>
     </header>
 
-    <section class="register-page form-page">
+    <section class="login-page form-page">
         <div class="container">
             <div class="form-page__inner">
-                <h1 class="register-page__title form-page__title">Зарегистрироваться</h1>
+                <h1 class="login-page__title form-page__title">Для продолжение войдите или зарегистрируйтесь</h1>
                 <form action="#">
                     <div class="form-page__item">
                         <label>
@@ -96,36 +96,42 @@
                     </div>
                     <div class="form-page__item">
                         <label>
-                            <span>Ваше имя</span>
-                            <input type="text" placeholder="Введите имя">
-                        </label>
-                    </div>
-                    <div class="form-page__item">
-                        <label>
                             <span>Пароль</span>
-                            <input type="password" placeholder="Введите пароль">
-                        </label>
-                    </div>
-                    <div class="form-page__item">
-                        <label>
-                            <span>Повторите пароль</span>
                             <input type="password" placeholder="Введите пароль">
                         </label>
                     </div>
                     <div class="form-page__item checkbox-block">
                         <label>
-                            <input type="checkbox" name="policy"> 
+                            <input type="checkbox" name="remember"> 
                             <span class="form-page__checkbox"></span>
-                            Согласен с условиями пользовательского соглашения
+                            Запомнить меня
                         </label>
                     </div>
-                    <div class="form-page__btn-wrapper">
-                        <button class="form-page__btn btn">Зарегистрироваться</button>
+                    <button class="form-page__btn btn login-page__btn">Войти</button>
+                    <div class="form-page__socials socials">
+                        <a class="socials__block" href="#">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.375 0H5.625C2.51888 0 0 2.51888 0 5.625V12.375C0 15.4811 2.51888 18 5.625 18H12.375C15.4811 18 18 15.4811 18 12.375V5.625C18 2.51888 15.4811 0 12.375 0ZM16.3125 12.375C16.3125 14.5463 14.5463 16.3125 12.375 16.3125H5.625C3.45375 16.3125 1.6875 14.5463 1.6875 12.375V5.625C1.6875 3.45375 3.45375 1.6875 5.625 1.6875H12.375C14.5463 1.6875 16.3125 3.45375 16.3125 5.625V12.375Z" fill="#676767"/>
+                                <path d="M9 4.5C6.51487 4.5 4.5 6.51487 4.5 9C4.5 11.4851 6.51487 13.5 9 13.5C11.4851 13.5 13.5 11.4851 13.5 9C13.5 6.51487 11.4851 4.5 9 4.5ZM9 11.8125C7.44975 11.8125 6.1875 10.5503 6.1875 9C6.1875 7.44863 7.44975 6.1875 9 6.1875C10.5503 6.1875 11.8125 7.44863 11.8125 9C11.8125 10.5503 10.5503 11.8125 9 11.8125Z" fill="#676767"/>
+                                <path d="M13.836 4.76213C14.1671 4.76213 14.4356 4.49367 14.4356 4.16251C14.4356 3.83134 14.1671 3.56288 13.836 3.56288C13.5048 3.56288 13.2363 3.83134 13.2363 4.16251C13.2363 4.49367 13.5048 4.76213 13.836 4.76213Z" fill="#676767"/>
+                            </svg>
+                            <span>Войти через Instagram</span>
+                        </a>
+                        <a class="socials__block" href="#">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 7.2V10.8H14.0922C13.3488 12.8952 11.3472 14.4 9 14.4C6.0228 14.4 3.6 11.9772 3.6 9C3.6 6.0228 6.0228 3.6 9 3.6C10.2906 3.6 11.5326 4.0626 12.4974 4.9032L14.8626 2.1888C13.2426 0.7776 11.1618 0 9 0C4.0374 0 0 4.0374 0 9C0 13.9626 4.0374 18 9 18C13.9626 18 18 13.9626 18 9V7.2H9Z" fill="#676767"/>
+                            </svg>
+                            <span>Войти через Google</span>
+                        </a>
                     </div>
                     <div class="form-page__foot">
-                        <div class="form-page__line register-page__line">
-                            <span class="form-page__mark">Уже зарегистрирован?</span>
-                            <a class="form-page__link form-page__link--big" href="login.html">Войти</a>
+                        <div class="form-page__line">
+                            <span class="form-page__mark">Нету профиля?</span>
+                            <a class="form-page__link form-page__link--big" href="register.html">Зарегистрироваться</a>
+                        </div>
+                        <div class="form-page__line">
+                            <span class="form-page__mark">Забыли пароль?</span>
+                            <a class="form-page__link form-page__link--big" href="#">Восстановить пароль</a>
                         </div>
                         <div class="form-page__links">
                             <a class="form-page__link" href="#">Политика конфедициальности</a>
