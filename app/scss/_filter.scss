@@ -94,11 +94,11 @@
 
             .filter__item-title {
                 &::before {
-                    transform: translateY(-50%) rotate(225deg);
+                    transform: translateY(-50%) rotate(-135deg);
                 }
 
                 &::after {
-                    transform: translateY(-50%) rotate(-45deg);
+                    transform: translateY(-50%) rotate(135deg);
                 }
             }
         }
@@ -135,18 +135,18 @@
         &::after {
             position: absolute;
             content: "";
-            right: 8px;
+            right: 7px;
             top: 12px;
             width: 2px;
-            height: 9px;
-            transform: translateY(-50%) rotate(45deg);
+            height: 7px;
+            transform: translateY(-50%) rotate(-45deg);
             background-color: #000000;
             transition: .3s ease;
         }
 
         &::after {
-            transform: translateY(-50%) rotate(135deg);
-            right: 2px;
+            transform: translateY(-50%) rotate(45deg);
+            right: 3px;
         }
     }
 

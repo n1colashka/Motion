@@ -1,3 +1,15 @@
+@media (max-width: 1600px) {
+    .tariffs-slider {
+        &__nav-prev {
+            left: -25px;
+        }
+
+        &__nav-next {
+            right: -25px;
+        }
+    }
+}
+
 @media (max-width: 1280px) {
     .tariff-page {
         &__content {
@@ -64,6 +76,12 @@
             max-width: 100%;
         }
     }
+
+    .tariffs {
+        &__payment {
+            padding-left: 0;
+        }
+    }
 }
 
 @media (max-width: 991px) {
@@ -71,6 +89,110 @@
 }
 
 @media (max-width: 768px) {
+
+    .tariffs {
+        &__title {
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 30px;
+        }
+
+        &__payment-title {
+            display: block;
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 20px;
+            padding: 13px 40px 13px 20px;
+        }
+
+        &__card-mobile-img {
+            display: block;
+        }
+
+        &__card-img {
+            display: none;
+        }
+
+        &__card-name {
+            color: #ffffff;
+        }
+
+        &__card-num {
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.245em;
+            top: 80px;
+            left: 53%;
+            bottom: auto;
+        }
+
+        &__card-btn {
+            font-size: 13px;
+            line-height: 16px;
+            bottom: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            top: auto;
+            left: 50%;
+            max-width: 145px;
+            transform: translateX(-50%);
+            background-image: linear-gradient(180deg, #CABF69 0%, #847714 100%);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .tariffs-slider {
+        margin-bottom: 40px;
+
+        &:last-child {
+            display: none;
+        }
+        
+        &__banner {
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        &__name {
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        &__price {
+            font-size: 23px;
+            line-height: 28px;
+        }
+
+        &__duration {
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        &__buttons {
+            text-align: center;
+        }
+
+        &__btn {
+            opacity: 1;
+            padding: 7px 20px;
+            max-width: 160px;
+            margin-bottom: 10px;
+        }
+
+        &__toggle {
+            font-size: 13px;
+            line-height: 16px;
+
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .btn {
+        font-size: 15px;
+        line-height: 18px;
+    }
 
     .container {
         padding: 0 15px;       
@@ -354,9 +476,22 @@
         }
     }
     
+    .tariffs-slider {
+        &__nav-prev,
+        &__nav-next {
+            display: none;
+        }
+    }
 }
 
 @media (max-width: 480px) {
+
+    .tariffs-slider {
+
+        &__buttons {
+            margin-top: 30px;
+        }
+    }
 
     .header {
         &__logo {
@@ -402,6 +537,28 @@
 
         &__time {
             right: 0;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .tariffs-slider {
+        &__item {
+            width: 100%;
+        }
+        
+        &__buttons {
+            margin-top: 15px;
+        }
+    }
+
+    .tariffs {
+        &__card-num {
+            top: 35%;
+        }
+
+        &__card-btn {
+            bottom: 30px;
         }
     }
 }

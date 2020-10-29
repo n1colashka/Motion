@@ -50,6 +50,24 @@ h6 {
     box-sizing: border-box;
 }
 
+.btn {
+    display: inline-block;
+    text-align: center;
+    @include font('ms-bold');
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 5px 10px;
+    max-width: 215px;
+    width: 100%;
+    background-color: $grey;
+    transition: .3s ease;
+
+    &:hover {
+        transform: scaleX(1.05);
+    }
+}
+
 // Input number fix
 
 input[type='number'] {

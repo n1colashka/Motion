@@ -70,11 +70,87 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function initPaymentsAccordion() {
+        const paymentBlock = document.querySelector('.tariffs__payment');
+        const paymentsTitle = document.querySelector('.tariffs__payment-title');
+
+        paymentsTitle.addEventListener('click', () => {
+            paymentBlock.classList.toggle('active');
+        });
+    }
+
     if (window.innerWidth <= 768) {
         changePageType();
     }
 
+    function initTariffSliders() {
+        var tariffSlider = new Swiper('.tariffs-slider--1', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 4,
+            spaceBetween: 40,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.slider-next-1',
+                prevEl: '.slider-prev-1',
+            },
+            breakpoints: {
+                
+                320: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 50,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+                1366: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                }
+            }
+        });
+
+        var tariffSlider2 = new Swiper('.tariffs-slider--2', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 4,
+            spaceBetween: 40,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.slider-next-2',
+                prevEl: '.slider-prev-2',
+            },
+            breakpoints: {
+                
+                320: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 50,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+                1366: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                }
+            }
+        });
+    }
+
     initMenu();
     initFilter();
-    
+    initTariffSliders();
+    initPaymentsAccordion();
 });
