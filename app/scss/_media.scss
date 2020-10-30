@@ -468,6 +468,18 @@
             max-height:155px;
             overflow:hidden;
 
+            &.active {
+                overflow:visible;
+                max-height: 100%;
+                &::before {
+                    content: none;
+                }
+
+                & ~ .tariff-page__btn {
+                    display: none;
+                }
+            }
+
             &:before{
                 position: absolute;
                 content:"";
@@ -520,6 +532,10 @@
 
         &__info-item {
             margin-bottom: 5px;
+        }
+
+        &__info-add {
+            opacity: 1;
         }
 
         &__item {

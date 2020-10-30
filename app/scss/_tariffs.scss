@@ -130,6 +130,10 @@
         height: 38px;
         z-index: 5;
         background: url('../images/slider-arrow.svg') no-repeat center;
+
+        &.swiper-button-disabled {
+            opacity: .5;
+        }
     }
 
     .tariffs-slider {
@@ -251,7 +255,6 @@
 
     &__btn {
         margin-bottom: 15px;
-        opacity: 0;
 
         &:last-child {
             margin-bottom: 0;
@@ -268,6 +271,7 @@
 
         input:checked ~ .tariffs-slider__toggle-icon::after {
             left: calc(100% - 15px);
+            background-color: #64D094;
         }
 
         span {
@@ -299,7 +303,7 @@
             transform: translateY(-50%);
             width: 12px;
             height: 12px;
-            background-color: #64D094;
+            background-color: $grey;
             border-radius: 50%;
             transition: .3s ease;
         }

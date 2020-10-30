@@ -76,14 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (window.innerWidth <= 768) {
-    changePageType();
+  function initReadMore() {
+    var tariffPageBtn = document.querySelector('.tariff-page__btn');
+    var tariffPageText = document.querySelector('.tariff-page__text');
+    tariffPageBtn.addEventListener('click', function () {
+      tariffPageText.classList.add('active');
+    });
   }
 
   function initTariffSliders() {
     var tariffSlider = new Swiper('.tariffs-slider--1', {
       // Optional parameters
-      loop: true,
+      initialSlide: 1,
       slidesPerView: 4,
       spaceBetween: 40,
       // Navigation arrows
@@ -113,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     var tariffSlider2 = new Swiper('.tariffs-slider--2', {
       // Optional parameters
-      loop: true,
+      initialSlide: 1,
       slidesPerView: 4,
       spaceBetween: 40,
       // Navigation arrows
@@ -141,6 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
+  } // Функции работающие только на мобильных устройствах
+
+
+  if (window.innerWidth <= 768) {
+    changePageType();
+    initReadMore();
   }
 
   initMenu();
