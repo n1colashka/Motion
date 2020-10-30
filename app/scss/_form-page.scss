@@ -71,32 +71,6 @@
 
     &__input-block {
         position: relative;
-
-        &.change input {
-            padding-right: 90px;
-        }
-    }
-
-    &__item-btn {
-        position: absolute;
-        right: 35px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 15px;
-        line-height: 18px;
-        color: $grey-dark;
-        padding-bottom: 3px;
-        cursor: pointer;
-
-        &::after {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 1px;
-            background-color: rgba(73, 88, 77, 0.21);
-        }
     }
 
     &__btn {

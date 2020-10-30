@@ -79,9 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function initReadMore() {
     var tariffPageBtn = document.querySelector('.tariff-page__btn');
     var tariffPageText = document.querySelector('.tariff-page__text');
-    tariffPageBtn.addEventListener('click', function () {
-      tariffPageText.classList.add('active');
-    });
+
+    if (tariffPageBtn) {
+      tariffPageBtn.addEventListener('click', function () {
+        tariffPageText.classList.add('active');
+      });
+    }
   }
 
   function initTariffSliders() {
