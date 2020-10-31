@@ -712,15 +712,6 @@
 }
 
 @media (max-width: 400px) {
-    .tariffs-slider {
-        &__item {
-            // max-width: 260px;
-        }
-        
-        &__buttons {
-            // margin-top: 15px;
-        }
-    }
 
     .form-page {
         &__inner {
@@ -729,3 +720,8 @@
     }
 }
 
+@media (min-width: 769px) {
+    .header__logo {
+        margin-right: 100px;
+    }
+}
