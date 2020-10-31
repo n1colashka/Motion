@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     function initMenu() {
         const menuBtn = document.querySelector('.header__btn');
@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (event.target.closest('.header__btn')) {
                 menuWrapper.classList.toggle('active');
                 menuBtn.classList.toggle('active');
-            } 
-            else {
+            } else {
                 menuWrapper.classList.remove('active');
                 menuBtn.classList.remove('active');
             }
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 types.forEach(type => {
                     type.style.display = "inline-block";
                 });
-            } 
+            }
             activeType.style.display = "inline-block";
         });
     }
@@ -74,9 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const paymentBlock = document.querySelector('.tariffs__payment');
         const paymentsTitle = document.querySelector('.tariffs__payment-title');
 
-        paymentsTitle.addEventListener('click', () => {
-            paymentBlock.classList.toggle('active');
-        });
+        if (paymentBlock) {
+            paymentsTitle.addEventListener('click', () => {
+                paymentBlock.classList.toggle('active');
+            });
+        }
     }
 
     function initReadMore() {
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevEl: '.slider-prev-1',
             },
             breakpoints: {
-                
+
                 320: {
                     slidesPerView: 'auto',
                     spaceBetween: 15,
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevEl: '.slider-prev-2',
             },
             breakpoints: {
-                
+
                 320: {
                     slidesPerView: 'auto',
                     spaceBetween: 15,
@@ -155,15 +156,70 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
+    function initStickyFilter() {
+        var a = document.querySelector('.filter'),
+            b = null,
+            P = 100;
+        window.addEventListener('scroll', Ascroll, false);
+        document.body.addEventListener('scroll', Ascroll, false);
+
+        function Ascroll() {
+            if (b == null) {
+                var Sa = getComputedStyle(a, ''),
+                    s = '';
+                for (var i = 0; i < Sa.length; i++) {
+                    if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+                        s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+                    }
+                }
+                b = document.createElement('div');
+                b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+                a.insertBefore(b, a.firstChild);
+                var l = a.childNodes.length;
+                for (var i = 1; i < l; i++) {
+                    b.appendChild(a.childNodes[1]);
+                }
+                a.style.height = b.getBoundingClientRect().height + 'px';
+                a.style.padding = '0';
+                a.style.border = '0';
+            }
+            var Ra = a.getBoundingClientRect(),
+                R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.trains').getBoundingClientRect().bottom); // селектор блока, при достижении нижнего края которого нужно открепить прилипающий элемент
+            if ((Ra.top - P) <= 0) {
+                if ((Ra.top - P) <= R) {
+                    b.className = 'stop';
+                    b.style.top = -R + 'px';
+                } else {
+                    b.className = 'sticky';
+                    b.style.top = P + 'px';
+                }
+            } else {
+                b.className = '';
+                b.style.top = '';
+            }
+            window.addEventListener('resize', function () {
+                a.children[0].style.width = getComputedStyle(a, '').width
+            }, false);
+        }
+    }
+
     // Функции работающие только на мобильных устройствах
     if (window.innerWidth <= 768) {
         changePageType();
-        initReadMore()
+        initReadMore();
+    }
+
+    if (window.innerWidth > 768) {
+        if (document.querySelector('.filter')) {
+            initStickyFilter();
+        }
     }
 
     initMenu();
     initFilter();
     initTariffSliders();
     initPaymentsAccordion();
+
+
 });

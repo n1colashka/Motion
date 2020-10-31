@@ -604,8 +604,51 @@
     .tariffs-slider {
 
         &__buttons {
-            margin-top: 30px;
+            margin-top: 15px;
         }
+
+        &__benefits-title {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        &__benefits-item {
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        &__item-inner {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        &__price {
+            font-size: 20px;
+            line-height: 20px;
+            margin-bottom: 5px;
+        }
+
+        &__name {
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+        &__item {
+            max-width: 240px;
+            height: 550px;
+        }
+
+        &__toggle {
+            span {
+                white-space: nowrap;
+                margin-left: 3px;
+            }
+        }
+
+        &__toggle-icon {
+            margin-top: 0;
+        }
+        
     }
 
     .header {
@@ -671,11 +714,11 @@
 @media (max-width: 400px) {
     .tariffs-slider {
         &__item {
-            max-width: 260px;
+            // max-width: 260px;
         }
         
         &__buttons {
-            margin-top: 15px;
+            // margin-top: 15px;
         }
     }
 
