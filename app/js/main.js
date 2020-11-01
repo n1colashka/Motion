@@ -165,43 +165,82 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.addEventListener('scroll', Ascroll, false);
 
         function Ascroll() {
-            if (b == null) {
-                var Sa = getComputedStyle(a, ''),
-                    s = '';
-                for (var i = 0; i < Sa.length; i++) {
-                    if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
-                        s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+            var offset = window.pageYOffset;
+            console.log(offset);
+            if (offset > 1300) {
+                if (b == null) {
+                    var Sa = getComputedStyle(a, ''),
+                        s = '';
+                    for (var i = 0; i < Sa.length; i++) {
+                        if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+                            s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+                        }
                     }
+                    b = document.createElement('div');
+                    b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+                    a.insertBefore(b, a.firstChild);
+                    var l = a.childNodes.length;
+                    for (var i = 1; i < l; i++) {
+                        b.appendChild(a.childNodes[1]);
+                    }
+                    a.style.height = b.getBoundingClientRect().height + 'px';
+                    a.style.padding = '0';
+                    a.style.border = '0';
                 }
-                b = document.createElement('div');
-                b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
-                a.insertBefore(b, a.firstChild);
-                var l = a.childNodes.length;
-                for (var i = 1; i < l; i++) {
-                    b.appendChild(a.childNodes[1]);
-                }
-                a.style.height = b.getBoundingClientRect().height + 'px';
-                a.style.padding = '0';
-                a.style.border = '0';
-            }
-            var Ra = a.getBoundingClientRect(),
-                R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.trains').getBoundingClientRect().bottom); // селектор блока, при достижении нижнего края которого нужно открепить прилипающий элемент
-            if ((Ra.top - P) <= 0) {
-                if ((Ra.top - P) <= R) {
-                    b.className = 'stop';
-                    b.style.top = -R + 'px';
+                var Ra = a.getBoundingClientRect(),
+                    R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.trains').getBoundingClientRect().bottom); // селектор блока, при достижении нижнего края которого нужно открепить прилипающий элемент
+                if ((Ra.top - P) <= 0) {
+                    if ((Ra.top - P) <= R) {
+                        b.className = 'stop';
+                        b.style.top = -R + 'px';
+                    } else {
+                        b.className = 'sticky';
+                        b.style.top = P + 'px';
+                    }
                 } else {
-                    b.className = 'sticky';
-                    b.style.top = P + 'px';
+                    b.className = '';
+                    b.style.top = '';
                 }
+                window.addEventListener('resize', function () {
+                    a.children[0].style.width = getComputedStyle(a, '').width
+                }, false);
             } else {
-                b.className = '';
-                b.style.top = '';
+                var stop = document.querySelector('.stop');
+                stop.style.cssText = '';
+                console.log(stop);
             }
-            window.addEventListener('resize', function () {
-                a.children[0].style.width = getComputedStyle(a, '').width
-            }, false);
-        }
+            }
+            
+    }
+
+    function stickyFilter() {
+        let filterHeight = 1300;
+        let nextPosition = 1450;
+        let previousPosition = 0;
+        const filter = document.querySelector('.filter form');
+
+        window.addEventListener('scroll', function() {
+
+            let offsetY = window.pageYOffset;
+
+            if (offsetY < filterHeight) {
+                filter.style.cssText = '';
+            } else if (offsetY >= document.body.scrollHeight - 1200) {
+                document.body.style.position = 'relative';
+                filter.style.cssText = 'position: absolute; bottom: 200px; top: auto';
+            }
+
+            else if (offsetY >= nextPosition - 250) {
+                document.body.style.position = '';
+                filter.style.cssText = `top: ${nextPosition}px; position: absolute; 'bottom: auto;`;
+                previousPosition = nextPosition;
+                nextPosition += filterHeight;
+
+            } else {
+                nextPosition -= filterHeight;
+                filter.style.cssText = `top: ${previousPosition}px; position: absolute; 'bottom: auto;`;
+            }
+        });
     }
 
     // Функции работающие только на мобильных устройствах
@@ -212,7 +251,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (window.innerWidth > 768) {
         if (document.querySelector('.filter')) {
-            initStickyFilter();
+            // initStickyFilter();
+            stickyFilter();
         }
     }
 
@@ -220,6 +260,5 @@ document.addEventListener('DOMContentLoaded', function () {
     initFilter();
     initTariffSliders();
     initPaymentsAccordion();
-
 
 });
