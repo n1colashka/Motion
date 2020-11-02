@@ -249,8 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (window.innerWidth > 768) {
     if (document.querySelector('.filter')) {
-      // initStickyFilter();
-      stickyFilter();
+      initStickyFilter(); // stickyFilter();
     }
   }
 
